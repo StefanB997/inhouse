@@ -15,8 +15,6 @@ if(!isset($_SESSION['firstname']) && $_SESSION['firstname'] == ""){
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,43 +48,36 @@ if(!isset($_SESSION['firstname']) && $_SESSION['firstname'] == ""){
 					</div>
 				</div>
 				<div class="user-information-first">
-<?php 
-
-				$sql_info = "SELECT * FROM users WHERE id = $user_id";
-				$info_query = $db->query($sql_info);
-				$user_info = $info_query->fetch(PDO::FETCH_ASSOC);
-?>
-					<form action="change_user_info.php" method="POST">
-					<div style="display: inline-block;">
+					<form action="update_info_user.php" method="POST">
 						<label>
 							<h5>Име и Презиме</h5>
-							<input type="text" name="name" placeholder= "<?php echo $user_info['firstname']; echo " "; echo $user_info['lastname'];?>" disabled>
+							<input type="text" name="name" placeholder="">
 						</label>
 						<hr>
 						<label>
 							<h5>Е-маил</h5>
-							<input type="text" name="email" placeholder="<?php echo $user_info['email']?>" disabled>
+							<input type="text" name="email" placeholder="">
 						</label>
 						<hr>
 						<label>
 							<h5>Контакт Телефон</h5>
-							<input type="number" name="contact" placeholder="<?php echo $user_info ['phonenumber'] ?>" disabled>
+							<input type="number" name="contact" placeholder="">
 						</label>
 					</div>
-					<div class="user-information-second" style="display: inline-block;">
+					<div class="user-information-second">
 						<label>
-							<h5>Постоечка Лозинка</h5>
-							<input type="password" name="password" placeholder="********" required>
+							<h5>Лозинка</h5>
+							<input type="password" name="password" placeholder">
 						</label>
 						<hr>
 						<label>
 							<h5>Нова Лозинка</h5>
-							<input type="password" name="n_password" placeholder=********>
+							<input type="password" name="n_password" placeholder="">
 						</label>
 						<hr>
 						<label>
 							<h5>Повтори Лозинка</h5>
-							<input type="password" name="r_password" placeholder="********">
+							<input type="password" name="r_password" placeholder="">
 						</label>
 						<br>
 						<label>
@@ -95,13 +86,13 @@ if(!isset($_SESSION['firstname']) && $_SESSION['firstname'] == ""){
 					</div>
 				</form>
 			</div>
-		</div>
+		</div>	
 	</section>
 	<section>
 		<div class="user-posts-container">
 			<h1>Активни Огласи</h1><br>
 			<?php 
-			$sql = "SELECT id, title FROM posts WHERE user_id = '$user_id'";
+			$sql = 'SELECT title, id FROM posts';
 			$query = $db->query($sql);
 			$titles = $query->fetchAll(PDO::FETCH_ASSOC);
 				foreach($titles as $key =>$title){
@@ -112,11 +103,11 @@ if(!isset($_SESSION['firstname']) && $_SESSION['firstname'] == ""){
 				echo '</h5>';
 				echo '</div>';
 				echo '<div class="button-edit">';
-				echo '<a href = "update_post.php?id='. $title['id'] .'"><button type="submit" id="remove">Измени</a>';
+				echo '<button type="submit" id="edit">Измени';
 				echo '</button>';
 				echo '</div>';
 				echo '<div class="button-remove">';
-				echo '<a href = "delete_post.php?id='. $title['id'] .'"><button type="submit" id="remove">Избриши</a>';
+				echo '<button type="submit" id="remove">Избриши';
 				echo '</button>';
 				echo '</div>';
 				echo '</div>';

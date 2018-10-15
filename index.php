@@ -5,6 +5,7 @@
     $sql = 'SELECT * FROM posts WHERE id >= (SELECT FLOOR(MAX(id) * RAND()) FROM posts) ORDER BY id';
     $query = $db->query($sql);
     $posts = $query->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <?php

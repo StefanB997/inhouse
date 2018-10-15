@@ -43,7 +43,6 @@ session_start();
                         <h5>Наслов</h5>
                         <input type="text" name="title" placeholder="Enter title" value = "<?php if(isset($_POST['title'])) { echo $post_title; } ?>" required>
                     </label>
-                    <hr>
                     <label>
                         <h5>Адреса</h5>
                         <input type="text"  name="address" placeholder="Enter address" value = "<?php if(isset($_POST['address'])) { echo $post_address; } ?>" required>
@@ -52,6 +51,11 @@ session_start();
                     <label>
                         <h5>Цена</h5>
                         <input type="number" name="price" placeholder="Enter price" value = "<?php if(isset($_POST['price'])) { echo $post_price; } ?>" required>
+                    </label>
+                    <hr>
+                    <label>
+                        <h5>Опис</h5>
+                        <input type="text" name="description" placeholder="Description" value = "<?php if(isset($_POST['description'])) { echo $post_description; } ?>" required>
                     </label>
                     <hr>
                     <label>
@@ -77,6 +81,16 @@ session_start();
                     </label>
                     <br>
                    <hr>
+                   <label>
+                        <h5>Број на Соби</h5>
+                        <input type="text" name="num_rooms" placeholder="Num Rooms" value = "<?php if(isset($_POST['num_rooms'])) { echo $post_numrooms; } ?>" required>
+                    </label>
+                    <hr>
+                    <label>
+                        <h5>Број на Тоалети</h5>
+                        <input type="text" name="num_toilets" placeholder="Num Toilets" value = "<?php if(isset($_POST['num_toilets'])) { echo $post_numtoilets; } ?>" required>
+                    </label>
+                    <hr>
                     <label>
                         <h5>Греење/Ладење</h5>
                         <input type="text" name="heat" placeholder="Heating" value = "<?php if(isset($_POST['heat'])) { echo $post_heat; } ?>" required>

@@ -38,7 +38,7 @@
             </div>
             <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Е-маил"></div>
             <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Лозинка"></div>
-            <div class="form-group"><button name = "login" class="btn btn-primary btn-block" type="submit">Најава</button></div><a href="#" class="forgot">Ја заборавивте лозинката? Кликнете овде.</a>
+            <div class="form-group"><button name = "login" class="btn btn-primary btn-block" type="submit">Најава</button></div><a href="reset_pass.html" class="forgot">Ја заборавивте лозинката? Кликнете овде.</a>
             </form>
     </div>
     <div class="footer-clean">

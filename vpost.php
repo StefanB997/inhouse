@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 $user_id = $_SESSION['id'];
@@ -28,22 +29,28 @@ if($validated_data === false) {
     ?>
     <center><font color="red" > <?php echo $gump->get_readable_errors(true); ?> </font></center>
     <?php 
-    $post_title = $_POST['title'];
-      $post_address = $_POST['address'];
-      $post_price = $_POST['price'];
-      $post_type = $_POST['type'];
-      $post_yearbt = $_POST['year_built'];
-      $post_parking = $_POST['parking'];
-      $post_sqmeter = $_POST['sqmeter'];
-      $post_heat = $_POST['heat'];
+        $post_title = $_POST['title'];
+        $post_address = $_POST['address'];
+        $post_price = $_POST['price'];
+        $post_description = $_POST['description'];
+        $post_type = $_POST['type'];
+        $post_yearbt = $_POST['year_built'];
+        $post_parking = $_POST['parking'];
+        $post_sqmeter = $_POST['sqmeter'];
+        $post_numrooms = $_POST['num_rooms'];
+        $post_numtoilets = $_POST['num_toilets'];
+        $post_heat = $_POST['heat'];
 }else {
     $post_title = $validated_data['title'];
     $post_address = $validated_data['address'];
     $post_price = $validated_data['price'];
+    $post_description = $validated_data['description'];
     $post_type = $validated_data['type'];
     $post_yearbt = $validated_data['year_built'];
     $post_parking = $validated_data['parking'];
     $post_sqmeter = $validated_data['sqmeter'];
+    $post_numrooms = $validated_data['num_rooms'];
+    $post_numtoilets = $validated_data['num_toilets'];
     $post_heat = $validated_data['heat'];
     // $post_date = date('Y-m-d');
     
@@ -75,7 +82,8 @@ if($validated_data === false) {
         $image_5 = $_FILES['files']['name'][4]; 
     if(!empty($insertValuesSQL) || $insertValuesSQL != ''){
             $insertValuesSQL = trim($insertValuesSQL,',');
-            $query = "INSERT INTO posts (title, address, price, type, year_built, parking, sqmeter, heat, user_id, img_1, img_2, img_3, img_4, img_5) VALUES ('$post_title', '$post_address', '$post_price', '$post_type', '$post_yearbt', '$post_parking', '$post_sqmeter', '$post_heat', '$user_id', '$image_1', '$image_2', '$image_3', '$image4', '$image5')";
+            // $insert = $db->query("INSERT INTO images (file_name, uploaded_on) VALUES $insertValuesSQL");
+            $query = "INSERT INTO posts (title, address, price, description, type, year_built, parking, sqmeter, num_rooms, num_toilets, heat, user_id, img_1, img_2, img_3, img_4, img_5) VALUES ('$post_title', '$post_address', '$post_price', '$post_description', '$post_type', '$post_yearbt', '$post_parking', '$post_sqmeter', '$post_numrooms', '$post_numtoilets', '$post_heat', '$user_id', '$image_1', '$image_2', '$image_3', '$image_4', '$image_5')";
             if($query){
                 $errorUpload = !empty($errorUpload)?'Upload Error: '.$errorUpload:'';
                 $errorUploadType = !empty($errorUploadType)?'File Type Error: '.$errorUploadType:'';
@@ -88,12 +96,11 @@ if($validated_data === false) {
             $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
 
             if (mysqli_affected_rows($connection) > 0) {
-                echo "<script> alert('Error while posting..try again');</script>";
-                include("index.php");
+                echo "<script> alert('Posted!');</script>";
+                header("location: index.php");
             }
             else {
-                echo "<script> alert('Error while posting..try again');</script>";
-                include("new-post.php");
+                "<script> alert('Error while posting..try again');</script>";
             }
         }
     }

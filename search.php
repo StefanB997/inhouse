@@ -6,7 +6,7 @@
 
     $query = $db->query($sql);
     $posts = $query->fetchAll(PDO::FETCH_ASSOC);
-
+		
 ?>
 <?php
 	$current = "search";
@@ -137,14 +137,13 @@
 		 	foreach($posts as $key => $post) {
 				if($key % 4 == 0) {
 					echo '<div class="row">';
-				}
+				    }
 				echo '<div class="list-item">';
 				echo '<a href="item.php?id='. $post['id'] .'"><div class="item-container">';
 				echo '<div class="item-img">';
 				echo '<img src="postpics/'.$post['img_1'].'">';
 				echo "</div>";
 				echo "<div class = 'item-list-desc'>";
-				echo '<p> Наслов: ' .$post["title"].'</p>';
 				echo '<p> Локација: ' .$post["address"].'</p>';
 				echo '<p> Година: ' .$post["year_built"].'</p>';
 				echo '<p> Квадратура: ' .$post["sqmeter"].'</p>';

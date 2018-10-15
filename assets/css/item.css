@@ -20,12 +20,6 @@
 		display: inline-block;
 	}
 
-	.main-image img{
-		width: 100%;
-		/*box-shadow: 1px 1px 20px black;*/
-		box-shadow: -0.5px 0.5px 3px black;
-	}
-
 	.main-image-holder{
 		width: 100%;
 	}
@@ -40,7 +34,7 @@
 	}
 
 	.ustvari-item{
-		width: 25%;
+		width: 24%;
 		/*padding: 1%;*/
 		display: inline-block;
 	}
@@ -52,12 +46,6 @@
 
 	.ustvari-item img{
 		width: 100%;
-		box-shadow: -0.5px 0.5px 5px black;
-	}
-
-	.item-row-holder{
-		width: 99%;
-		margin: 0 auto;
 	}
 
 	.item-description{

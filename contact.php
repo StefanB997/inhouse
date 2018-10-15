@@ -1,6 +1,9 @@
-<?php
-    session_start();
+<?php 
+
+$current = 'contact';
+
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,14 +48,14 @@
             <div class="info-block" id="contact-block">
                 <h3>Прашање?</h3>
                 <hr>
-                <form>
+                <form method = "post" action = "handle.php">
                     <h5>Вашиот Емаил</h5>
-                    <input type="email">
+                    <input type="email" name = "email">
                     <h5>Телефон</h5>
-                    <input type="number">
+                    <input type="number" name = "number">
                     <h5>Порака</h5>
-                    <textarea></textarea>
-                    <button type="submit">Испрати</button>
+                    <textarea name = "msg"></textarea>
+                    <button type="submit" name = "submit">Испрати</button>
                 </form>
             </div>
         </div>

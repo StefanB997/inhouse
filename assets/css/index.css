@@ -43,7 +43,7 @@
 	}
 
 	#search{
-		min-width: 430px;
+		min-width: 300px;
 		height: 50px;
 		/*border-radius: 20px;*/
 		outline: none;
@@ -184,7 +184,7 @@
 
 	.support-icon{
 		color: #686767;
-		width: 33%;
+		width: 32%;
 		display: inline-block;
 		text-align: center;
 		padding: 2%;
@@ -211,8 +211,8 @@
 		cursor: pointer;
 		display: inline-block;
 		cursor: pointer;
-		min-width: 150px;
-		margin: 0.6%;
+		min-width: 100px;
+		margin: 1%;
 		padding:10px;
 		border: 1px solid transparent;
 		outline: none;
@@ -422,8 +422,7 @@
 
 	.support-icon{
 		color: #686767;
-		width: 33%;
-		vertical-align: middle;
+		width: 32%;
 		display: inline-block;
 		text-align: center;
 		padding: 2%;

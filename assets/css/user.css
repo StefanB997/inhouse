@@ -1,0 +1,107 @@
+body{
+	color:#465765;
+}
+.user-info-container{
+	width: 80%;
+	margin: 0 auto;
+}
+
+.user-info-holder{
+	padding-top: 6%;
+	padding-bottom: 4%;
+	width: 100%;
+}
+
+.user-info-holder input{
+	min-width: 300px;
+	height: 50px;
+}
+
+.user-info-img{
+	width: 20%;
+	display: inline-block;
+}
+
+.user-img{
+	vertical-align: top;
+	width: 80%
+}
+
+.user-img img{
+	width: 100%;
+}
+
+.user-information-first{
+	width: 30%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.user-information ul {
+	list-style: none;
+}
+
+.user-information-second{
+	width: 30%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.update-button{
+	width: 10%;
+	display: inline-block;
+	vertical-align: top;
+	padding-top: 18%;
+}
+
+#submit{
+	font-size: 1em;
+	margin-top: 25%;
+	box-shadow: 1px 1px 2px black;
+}
+
+.user-posts-container{
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 6%;
+	border-top: 1px solid #efefef;
+}
+
+.list-post-item{
+	width: 100%;
+}
+
+.list-title{
+	width: 80%;
+	display: inline-block;
+}
+
+.button-edit{
+	display: inline-block;
+	width: 5%;
+	padding: 1%;
+	margin: 1%;
+}
+
+.button-edit button{
+	background-color: #5b9aff;
+	border: 0;
+	color: white;
+	padding: 20%;
+	box-shadow: 1px 1px 2px black;
+}
+
+.button-remove{
+	width: 5%;
+	padding: 1%;
+	margin: 1%;
+	display: inline-block;
+}
+
+.button-remove button{
+	box-shadow: 1px 1px 2px black;
+	background-color: #ff5b5b;
+	border: 0;
+	color: white;
+	padding: 20%;
+}
